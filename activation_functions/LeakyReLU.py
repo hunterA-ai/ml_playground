@@ -9,5 +9,6 @@ class LeakyReLU:
     def forward(self, inputs):
         outp= np.maximum(self.alpha * inputs, inputs)
         return outp
-    def backward(self, inputs):
+    def derivative(self, inputs):
         outp = np.maximum(self.alpha, inputs)
+        return outp

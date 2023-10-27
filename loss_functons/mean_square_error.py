@@ -4,8 +4,7 @@ class mean_square_error:
         pass
 
     def compute(self, y_true, y_pred):
-        return np.sum((y_true-y_pred)**2)/len(y_true)
+        return np.sum((y_pred - y_true)**2)/len(y_true)
     
     def derivative(self, y_true, y_pred):
-        return 2 * np.sum((y_true-y_pred))/len(y_true)
-
+        return 2 * np.sum((y_pred-y_true))/len(y_true)

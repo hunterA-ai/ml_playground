@@ -7,7 +7,8 @@ class ReLU:
     def __init__(self):
         pass
     def forward(self, inputs):
-        outp= np.maximum(0, inputs)
-        return outp
-    def backward(self, inputs):
         outp = np.maximum(0, inputs)
+        return outp
+    def derivative(self, inputs):
+        outp = np.maximum(0, inputs)
+        return outp
