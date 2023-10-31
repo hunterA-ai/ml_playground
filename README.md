@@ -22,7 +22,7 @@ class nn_layer:
 		return self.activation_output
 ```
 
-$$z\coloneqq X W^T + \begin{pmatrix} b \\ b \\ \vdots \\b \end{pmatrix}$$
+$z\coloneqq X W^T + \begin{pmatrix} b \\ b \\ \vdots \\b \end{pmatrix}$
 where $b$ is added to each row, componentwise
 - $X \in \mathbb{R}^{(batch\_size, num\_in\_n)}$
 - $W^T \in \mathbb{R}^{(num\_in\_n, num\_out\_n)}$
