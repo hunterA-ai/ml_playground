@@ -7,9 +7,12 @@ class mean_square_error:
         return np.sum((y_pred - y_true)**2)/len(y_true)
     
     def dC_dX(self, X, w, b, y):
-        return np.outer(np.matmul(X, w) + b - y, w) # size(batch_size, n_in)
+        print("Xw +b shape", (np.dot(X, w) + b).shape)
+        print("Xw +b shape", (np.dot(X, w) + b - y).shape)
+        return np.outer((np.dot(X, w) + b) - y, w) # shape(batch_size, n_in)
 
     def dC_dw(self, X, w, b, y):
-        return 2 * np.sum(np.matmul(np.matmul(X, w) + b - y, X.T), axis=0) / X.shape[0] # size(batch_size, n_out)
+        return 2 * np.sum(np.dot((np.dot(X, w) + b - y), X)) / X.shape[0] # shape(1)
+    
     def dC_db(self, X, w, b, y):
-        return 2 * np.sum(np.matmul(np.matmul(X, w) + b - y), axis=0) / X.shape[0]
+        return 2 * np.sum(np.dot(X, w) + b - y) / X.shape[0]
