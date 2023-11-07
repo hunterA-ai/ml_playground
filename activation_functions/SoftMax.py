@@ -14,3 +14,4 @@ class SoftMax:
         normalization_constant = np.sum(exp_values, axis=1, keepdims=True)
         probability_vector = exp_values / normalization_constant
         return probability_vector
+ ## Needs Derivative

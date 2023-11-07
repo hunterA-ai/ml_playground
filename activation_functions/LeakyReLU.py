@@ -7,7 +7,7 @@ class LeakyReLU:
     def __init__(self, leakiness):
         self.alpha = leakiness
     def forward(self, inputs):
-        outp= np.maximum(self.alpha * inputs, inputs)
+        outp = np.maximum(self.alpha * inputs, inputs)
         return outp
     def derivative(self, inputs):
         outp = np.maximum(self.alpha, inputs)
