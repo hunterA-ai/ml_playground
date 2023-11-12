@@ -1,6 +1,7 @@
 ## Introduction
 This project is about creating basic neural network using only linear algebra and object oriented programming. The mathematics behind the forward and backward (training) operations, as well as an example regression task, is provided as a proof of correctness. The code is in Python and the only package used is numpy, which speeds up the vector/matrix/tensor operations. The purpose of this project is simply as an exercise, similar to what may be found in a course on deep learning. The goal of this exercise is to gain a deeper familiarity with neural networks & the machine learning landscape in general. This work is self-guided and self-motivated.
 
+Note: The Latex in this document may not render properly on github, but will render when previewed as a markdown file in VSCode.
 
 ## Code Structure
 1. *loss_functions*
