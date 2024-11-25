@@ -18,7 +18,7 @@ Note: The Latex in this document may not render properly on github, but will ren
 ### Forward Pass
 $$z\coloneqq X W^T + b$$
 where $b$ is added to each row/instance via broadcasting
-- $X \in \mathbb{R}^{(batch\_size, num\_in\_n)}$
+- $X \in \mathbb{R}^{(batch-size, num-in-n)}$
 - $W^T \in \mathbb{R}^{(num\_in\_n, num\_out\_n)}$
 - $XW^T \in \mathbb{R}^{(batch\_size, num\_out\_n)}$
 - $b \in \mathbb{R}^{num\_out\_n}$
@@ -27,7 +27,7 @@ where $b$ is added to each row/instance via broadcasting
 ### Backward Pass
 #### Out Layer (MSE loss)
 *Error gradient to be passed backwards*
-$$\frac{\partial C}{\partial X} = 2 * ((Xw^T + b)-y) \otimes w \qquad shape (\text{batch\_size, in\_n})$$
+$$\frac{\partial C}{\partial X} = 2 * ((Xw^T + b)-y) \otimes w \qquad shape (\text{batch-size, in-n})$$
 *Error gradient to update weights*
 $$\frac{\partial C}{\partial w_j} = 2 * ((Xw^T + b) - y) 
 \cdot (X_{1j}, \dots, X_{nj}) $$
