@@ -26,11 +26,11 @@ where $b$ is added to each row/instance via broadcasting
 ### Backward Pass
 #### Out Layer (MSE loss)
 *Error gradient to be passed backwards*  
-$$\frac{\partial C}{\partial X} = 2 * ((Xw^T + b)-y) \otimes w \qquad shape (\text{batchSize, inputNeurons})$$
+- $$\frac{\partial C}{\partial X} = 2 * ((Xw^T + b)-y) \otimes w \qquad shape (\text{batchSize, inputNeurons})$$
 *Error gradient to update weights*  
-$$\frac{\partial C}{\partial w_j} = 2 * ((Xw^T + b) - y) 
+- $$\frac{\partial C}{\partial w_j} = 2 * ((Xw^T + b) - y) 
 \cdot (X_{1j}, \dots, X_{nj}) $$
-$$\frac{\partial C}{\partial w} = 2 * ((Xw^T + b)-y) X = 2 * np.dot(((Xw^T + b)-y) ,X)$$
+- $$\frac{\partial C}{\partial w} = 2 * ((Xw^T + b)-y) X = 2 * np.dot(((Xw^T + b)-y) ,X)$$
 
 
 
