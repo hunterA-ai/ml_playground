@@ -27,6 +27,7 @@ where $b$ is added to each row/instance via broadcasting
 #### Out Layer (MSE loss)
 *Error gradient to be passed backwards*  
 - $$\frac{\partial C}{\partial X} = 2 * ((Xw^T + b)-y) \otimes w \qquad shape (\text{batchSize, inputNeurons})$$  
+
 *Error gradient to update weights*  
 - $$\frac{\partial C}{\partial w_j} = 2 * ((Xw^T + b) - y) 
 \cdot (X_{1j}, \dots, X_{nj}) $$
@@ -37,7 +38,7 @@ where $b$ is added to each row/instance via broadcasting
 #### Regular Layer
 *Error gradient to be passed backwards*  
 For the $j^{th}$ neuron of instance $i$, we take the sum of errors over all outputs $k$. In other words, the sum of the errors flowing backward to neuron $j$.  
-- $$\frac{\partial C}{\partial X_{ij}} = \frac{\partial C}{\partial x_j^{(i)}} =  \sum_{k=1}^{\text{outputNeurons}} \left[ C_k'(a(x_j^{(i)}W^T+b)) * a_k'(x^{(i)}_j W^{T} + b) * W_{ki} \right]\qquad \text{shape(1)}$$  
+- $$\frac{\partial C}{\partial X_{ij}} = \frac{\partial C}{\partial x_j^{(i)}} = \sum_{k=1}^{\text{outputNeurons}} \left[ \frac{\partial C_k}{\partial a_k} \cdot a_k'\left(x^{(i)}_j W^{T} + b\right) \cdot W_{ki} \right]$$  
 - $$\frac{\partial C}{\partial X} = \sum_{k=1}^{\text{outputNeurons}} \left[ C_k'(a) *a_k'(X W^{T} + b) \otimes  w_{k}\right] \qquad shape(\text{batchSize, inputNeurons})$$
 - $$\frac{\partial C}{\partial X} = np.tensordot\left( C'(a(z)) * a'(z), W ,axes=(1,0)\right) \qquad shape(\text{batchSize, inputNeurons})$$  
 
