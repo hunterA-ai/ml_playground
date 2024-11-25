@@ -35,10 +35,14 @@ where $b$ is added to each row/instance via broadcasting
 
 
 
+
+$$\frac{\partial C}{\partial X_{ij}} = \sum_{k=1}^{\text{outputNeurons}} \left[ C_k'(a(X_{ij}W^T+b)) * a_k'(X_{ij} W^{T} + b) * W_{ki} \right]\qquad \text{shape(1)}$$
+
+
 #### Regular Layer
 *Error gradient to be passed backwards*  
 For the $j^{th}$ neuron of instance $i$, we take the sum of errors over all outputs $k$. In other words, the sum of the errors flowing backward to neuron $j$.  
-- $$\frac{\partial C}{\partial X_{ij}} = \frac{\partial C}{\partial x_j^{(i)}} = \sum_{k=1}^{\text{outputNeurons}} \left[ \frac{\partial C_k}{\partial a_k} \cdot a_k'\left(x^{(i)}_j W^{T} + b\right) \cdot W_{ki} \right]$$  
+- $$\frac{\partial C}{\partial X_{ij}} = \sum_{k=1}^{\text{outputNeurons}} \left[ C_k'(a(X_{ij}W^T+b)) * a_k'(X_{ij} W^{T} + b) * W_{ki} \right]\qquad \text{shape(1)}$$  
 - $$\frac{\partial C}{\partial X} = \sum_{k=1}^{\text{outputNeurons}} \left[ C_k'(a) *a_k'(X W^{T} + b) \otimes  w_{k}\right] \qquad shape(\text{batchSize, inputNeurons})$$
 - $$\frac{\partial C}{\partial X} = np.tensordot\left( C'(a(z)) * a'(z), W ,axes=(1,0)\right) \qquad shape(\text{batchSize, inputNeurons})$$  
 
