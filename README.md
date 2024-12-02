@@ -1,5 +1,5 @@
 ## Introduction
-This project is about creating basic neural network using only linear algebra and object oriented programming. The mathematics behind the forward and backward (training) operations, as well as an example regression task, is provided as a proof of correctness. The code is in Python and the only package used is numpy, which speeds up the vector/matrix/tensor operations. The purpose of this project is simply as an exercise, similar to what may be found in a course on deep learning. The goal of this exercise is to gain a deeper familiarity with neural networks & the machine learning landscape in general. This work is self-guided and self-motivated.
+This project is about creating basic neural network using only linear algebra and object oriented programming. The mathematics behind the forward and backward (training) operations, as well as an example regression task which is provided as a proof of correctness. The code is in Python and the only package used is numpy, which speeds up the vector/matrix/tensor operations. The purpose of this project is simply as an exercise, similar to what may be found in a course on deep learning. The goal of this exercise is to gain a deeper familiarity with neural networks & the machine learning landscape in general. This work is self-guided and self-motivated.
 
 
 ## Code Structure
@@ -14,6 +14,7 @@ This project is about creating basic neural network using only linear algebra an
 	3. *neural_networks/OutLayer.py* Represents the output layer of neurons as a weight vector (w) and bias (b), with functions to compute the single variable output, loss of the network, and error gradient from the loss.
 
 ## The Mathematics of Backpropagation
+The notation for backpropagation is convoluted. I aim to simplify the notation as much as possible, but it will take some work to parse through. I suggest looking at the code as a reference because it is much simpler. Mathematical notation is a powerful tool, but at the end of the day Backpropagation is an algorithm and looking at the code is the best way to understand it.
 
 ### Forward Pass
 Let our output for a particular layer be $$z\coloneqq X W^T + b$$
